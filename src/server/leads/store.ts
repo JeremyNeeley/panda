@@ -33,6 +33,8 @@ export async function storeLead(lead: Omit<LeadInput, "websiteTrap">) {
       company: lead.company || null,
       website: lead.website || null,
       role: lead.role || null,
+      country_region: lead.countryRegion || null,
+      time_zone: lead.timeZone || null,
       consent: lead.consent,
       status: "NEW"
     }),

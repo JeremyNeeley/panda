@@ -5,7 +5,7 @@ import { ProjectForm } from "@/components/forms/ProjectForm";
 
 export const metadata: Metadata = {
   title: "Start a Project",
-  description: "Tell Panda Digital Systems what you are trying to build, automate, improve, secure, or modernize."
+  description: "Tell Panda Digital Systems what you are trying to build, automate, improve, secure, or modernize—from anywhere in the world."
 };
 
 export default function StartProjectPage() {

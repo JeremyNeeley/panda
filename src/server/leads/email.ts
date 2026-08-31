@@ -44,6 +44,8 @@ export async function sendLeadEmails(lead: PublicLead) {
         <p><b>Name:</b> ${esc(lead.name)}</p>
         <p><b>Email:</b> ${esc(lead.email)}</p>
         <p><b>Company:</b> ${esc(lead.company || "—")}</p>
+        <p><b>Country / region:</b> ${esc(lead.countryRegion || "—")}</p>
+        <p><b>Time zone:</b> ${esc(lead.timeZone || "—")}</p>
         <p><b>Project type:</b> ${esc(lead.projectType)}</p>
         <p><b>Stage:</b> ${esc(lead.projectStage)}</p>
         <p><b>Budget:</b> ${esc(lead.budget)}</p>

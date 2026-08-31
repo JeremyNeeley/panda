@@ -100,3 +100,7 @@ The public work section is intentionally broader than a single application. It c
 - U App experimental mobile/mathematical system
 
 Service and case-study CTAs carry project context into the Start a Project flow through validated query parameters, reducing repeated input for prospects.
+
+## Worldwide delivery
+
+PandaDigital.dev is positioned for international, remote-first client work. The homepage explicitly supports collaboration across North America, Latin America, Europe, Africa, the Middle East, and Asia-Pacific without claiming a physical office in those regions. The project intake records optional country/region and time-zone context, and budget ranges are presented as USD reference points that international clients can map to a local equivalent.

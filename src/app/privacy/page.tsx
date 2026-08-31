@@ -20,7 +20,7 @@ export default function PrivacyPage() {
       <section className="section shell legal-copy">
         <article>
           <h2>Information you provide</h2>
-          <p>The Start a Project form may collect your name, email address, company, role, website, project description, requested capabilities, budget range, timeline, and optional deadline.</p>
+          <p>The Start a Project form may collect your name, email address, company, role, website, country or region, time zone, project description, requested capabilities, budget range, timeline, and optional deadline.</p>
         </article>
         <article>
           <h2>Why it is used</h2>

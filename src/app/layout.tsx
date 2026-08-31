@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Panda Digital Systems"
   },
   description:
-    "Software engineering, AI automation, product development, cybersecurity, and cloud systems for ambitious teams.",
+    "Worldwide software engineering, AI automation, product development, cybersecurity, and cloud systems for ambitious teams.",
   openGraph: {
     title: "Panda Digital Systems",
     description: "Build. Automate. Secure.",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Panda Digital Systems",
-    description: "Software, AI, product, cybersecurity, and cloud engineering.",
+    description: "Worldwide software, AI, product, cybersecurity, and cloud engineering.",
     images: ["/og-card.png"]
   },
   alternates: { canonical: "https://pandadigital.dev" },
@@ -41,6 +41,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               name: "Panda Digital Systems",
               url: "https://pandadigital.dev",
               slogan: "Build. Automate. Secure.",
+              areaServed: "Worldwide",
+              availableLanguage: ["English"],
               sameAs: ["https://github.com/JeremyNeeley"],
               knowsAbout: [
                 "Software Engineering",

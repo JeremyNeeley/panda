@@ -67,3 +67,11 @@ After the first successful dependency install, commit the generated `package-loc
 - Optional Resend domain verification and API key
 - Final privacy/business contact details
 - DNS/hosting configuration for `PandaDigital.dev`
+
+## Worldwide client-readiness pass
+
+- Homepage now states worldwide, remote-first availability without implying local offices or prior clients in every region.
+- Added region-neutral collaboration messaging for North America, Latin America, Europe, Africa, Middle East, and Asia-Pacific.
+- Added optional country/region and time-zone fields to project intake and corresponding server validation/storage/email fields.
+- Budget ranges are explicitly USD reference points with local-equivalent guidance.
+- Organization metadata now declares worldwide service area and English availability.

@@ -16,6 +16,8 @@ create table if not exists public.leads (
   company text,
   website text,
   role text,
+  country_region text,
+  time_zone text,
   consent boolean not null default false,
   status text not null default 'NEW'
 );
@@ -24,3 +26,8 @@ alter table public.leads enable row level security;
 
 -- No public RLS policies are created intentionally.
 -- The browser cannot read or write this table directly. The server route writes with a service role key.
+
+
+-- Safe additions for existing Panda Digital v1 lead tables.
+alter table public.leads add column if not exists country_region text;
+alter table public.leads add column if not exists time_zone text;

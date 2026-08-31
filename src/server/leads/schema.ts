@@ -18,6 +18,8 @@ export const leadSchema = z.object({
   company: z.string().trim().max(160).optional().default(""),
   website: z.union([z.literal(""), z.string().trim().url().max(300)]).optional().default(""),
   role: z.string().trim().max(120).optional().default(""),
+  countryRegion: z.string().trim().max(120).optional().default(""),
+  timeZone: z.string().trim().max(80).optional().default(""),
   consent: z.literal(true),
   websiteTrap: z.string().max(0).optional().default("")
 });

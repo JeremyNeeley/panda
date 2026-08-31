@@ -21,6 +21,7 @@ export function Footer() {
         </div>
         <div className="footer-meta">
           <span>PandaDigital.dev</span>
+          <span>Available worldwide · Remote-first</span>
           <span>© {new Date().getFullYear()} Panda Digital Systems</span>
         </div>
       </div>

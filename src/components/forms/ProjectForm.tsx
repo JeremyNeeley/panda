@@ -18,15 +18,15 @@ const stages = [
 ] as const;
 
 const services = ["Strategy & planning", "UI/UX & product design", "Frontend development", "Backend development", "Mobile development", "AI & automation", "Cloud / DevOps", "Cybersecurity", "Full project delivery", "Help me decide"];
-const budgets = [["under-2500", "Under $2,500"], ["2500-5000", "$2,500 – $5,000"], ["5000-15000", "$5,000 – $15,000"], ["15000-30000", "$15,000 – $30,000"], ["30000-plus", "$30,000+"], ["unsure", "Not sure yet"]] as const;
+const budgets = [["under-2500", "Under USD $2,500"], ["2500-5000", "USD $2,500 – $5,000"], ["5000-15000", "USD $5,000 – $15,000"], ["15000-30000", "USD $15,000 – $30,000"], ["30000-plus", "USD $30,000+"], ["unsure", "Not sure yet"]] as const;
 const timelines = [["asap", "As soon as possible"], ["2-4-weeks", "Within 2–4 weeks"], ["1-3-months", "Within 1–3 months"], ["later", "Later"], ["exploring", "I'm exploring options"]] as const;
 
 type FormData = {
   projectType: string; description: string; projectStage: string; services: string[]; budget: string; timeline: string;
-  deadline: string; name: string; email: string; company: string; website: string; role: string; consent: boolean; websiteTrap: string;
+  deadline: string; name: string; email: string; company: string; website: string; role: string; countryRegion: string; timeZone: string; consent: boolean; websiteTrap: string;
 };
 
-const initialData: FormData = { projectType: "", description: "", projectStage: "", services: [], budget: "", timeline: "", deadline: "", name: "", email: "", company: "", website: "", role: "", consent: false, websiteTrap: "" };
+const initialData: FormData = { projectType: "", description: "", projectStage: "", services: [], budget: "", timeline: "", deadline: "", name: "", email: "", company: "", website: "", role: "", countryRegion: "", timeZone: "", consent: false, websiteTrap: "" };
 
 export function ProjectForm() {
   const [step, setStep] = useState(1);
@@ -101,7 +101,7 @@ export function ProjectForm() {
         <div className="service-choice-grid">{services.map((service) => <button type="button" key={service} aria-pressed={data.services.includes(service)} className={data.services.includes(service) ? "service-choice active" : "service-choice"} onClick={() => toggleService(service)}><span>{data.services.includes(service) ? "✓" : "+"}</span>{service}</button>)}</div>
       </FormStep>}
 
-      {step === 4 && <FormStep title="What level of investment are you considering?" description="A range helps us recommend an engagement that matches the size of the problem.">
+      {step === 4 && <FormStep title="What level of investment are you considering?" description="A range helps us recommend an engagement that matches the size of the problem. USD ranges are reference points; use the closest local equivalent.">
         <div className="budget-grid">{budgets.map(([value, label]) => <button type="button" aria-pressed={data.budget === value} className={data.budget === value ? "budget-card active" : "budget-card"} onClick={() => update("budget", value)} key={value}>{label}</button>)}</div>
       </FormStep>}
 
@@ -116,6 +116,8 @@ export function ProjectForm() {
           <label className="field"><span>Work email *</span><input type="email" autoComplete="email" value={data.email} onChange={(event) => update("email", event.target.value)} maxLength={254} /></label>
           <label className="field"><span>Company</span><input autoComplete="organization" value={data.company} onChange={(event) => update("company", event.target.value)} maxLength={160} /></label>
           <label className="field"><span>Role</span><input autoComplete="organization-title" value={data.role} onChange={(event) => update("role", event.target.value)} maxLength={120} /></label>
+          <label className="field"><span>Country / region</span><input autoComplete="country-name" value={data.countryRegion} onChange={(event) => update("countryRegion", event.target.value)} maxLength={120} placeholder="Example: Germany" /></label>
+          <label className="field"><span>Time zone</span><input value={data.timeZone} onChange={(event) => update("timeZone", event.target.value)} maxLength={80} placeholder="Example: UTC+1 / CET" /></label>
           <label className="field contact-wide"><span>Website</span><input type="url" value={data.website} onChange={(event) => update("website", event.target.value)} placeholder="https://" maxLength={300} /></label>
           <label className="trap-field" aria-hidden="true">Website confirmation<input tabIndex={-1} autoComplete="off" value={data.websiteTrap} onChange={(event) => update("websiteTrap", event.target.value)} /></label>
         </div>

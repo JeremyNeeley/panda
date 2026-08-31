@@ -38,23 +38,58 @@ export default function Home() {
         <SystemField />
         <div className="hero-glow" />
         <div className="shell hero-inner">
-          <p className="eyebrow">PANDA DIGITAL SYSTEMS / ENGINEERING</p>
+          <p className="eyebrow">PANDA DIGITAL SYSTEMS / WORLDWIDE ENGINEERING</p>
           <h1><span>Build.</span><span>Automate.</span><span>Secure.</span></h1>
-          <p className="hero-lede">Digital systems engineered for what comes next.</p>
-          <p className="hero-copy">We design software, intelligent automation, secure products, and technical infrastructure for ambitious teams.</p>
+          <p className="hero-lede">Digital systems engineered for teams anywhere.</p>
+          <p className="hero-copy">We design software, intelligent automation, secure products, and technical infrastructure for ambitious teams around the world. Remote-first, async-friendly, and built for clear collaboration across time zones.</p>
           <div className="hero-actions">
             <Link href="/start-project" className="button">Start a Project <span>→</span></Link>
             <Link href="/work" className="button button-secondary">Explore Our Work</Link>
           </div>
           <div className="hero-categories" aria-label="Capabilities">
-            {['SOFTWARE', 'AI', 'PRODUCT', 'SECURITY', 'CLOUD'].map((item) => <span key={item}>{item}</span>)}
+            {['SOFTWARE', 'AI', 'PRODUCT', 'SECURITY', 'CLOUD', 'WORLDWIDE'].map((item) => <span key={item}>{item}</span>)}
           </div>
         </div>
       </section>
 
       <section className="signal-strip" aria-label="Engineering disciplines">
         <div className="signal-track">
-          {['WEB & SaaS', 'AI SYSTEMS', 'MOBILE', 'APIs', 'CLOUD', 'AUTOMATION', 'SECURITY', 'DATA', 'WEB & SaaS', 'AI SYSTEMS', 'MOBILE', 'APIs'].map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
+          {['REMOTE DELIVERY', 'WEB & SaaS', 'AI SYSTEMS', 'MOBILE', 'APIs', 'CLOUD', 'AUTOMATION', 'SECURITY', 'DATA', 'GLOBAL COLLABORATION', 'REMOTE DELIVERY', 'AI SYSTEMS'].map((item, index) => <span key={`${item}-${index}`}>{item}</span>)}
+        </div>
+      </section>
+
+      <section className="global-section" aria-labelledby="global-heading">
+        <div className="shell global-grid">
+          <div className="global-intro">
+            <p className="eyebrow">WORLDWIDE / REMOTE-FIRST DELIVERY</p>
+            <h2 id="global-heading">Built to work across borders.</h2>
+            <p>Panda Digital Systems is available to startups, businesses, product teams, and agencies worldwide. Geography should shape communication—not limit access to strong engineering.</p>
+            <div className="global-region-row" aria-label="Regions we can collaborate with">
+              {['NORTH AMERICA', 'LATIN AMERICA', 'EUROPE', 'AFRICA', 'MIDDLE EAST', 'ASIA-PACIFIC'].map((region) => <span key={region}>{region}</span>)}
+            </div>
+          </div>
+          <div className="global-card-grid">
+            <article>
+              <span>01 / ASYNC-FIRST</span>
+              <h3>Progress should not stop when a time zone changes.</h3>
+              <p>Clear written updates, decisions, handoffs, and visible milestones keep work moving without requiring everyone to be online at the same time.</p>
+            </article>
+            <article>
+              <span>02 / OVERLAP WITH PURPOSE</span>
+              <h3>Live collaboration where it actually helps.</h3>
+              <p>We create practical overlap for discovery, architecture, reviews, demos, and important decisions rather than filling calendars with unnecessary meetings.</p>
+            </article>
+            <article>
+              <span>03 / BORDERLESS ENGINEERING</span>
+              <h3>Your location does not define the technical solution.</h3>
+              <p>Software, AI, cloud, security, and product engineering can be delivered remotely with disciplined communication, source control, documentation, and secure access.</p>
+            </article>
+            <article>
+              <span>04 / CLEAR COMMERCIAL CONTEXT</span>
+              <h3>Start with your reality.</h3>
+              <p>Tell us your country, time zone, timeline, and approximate investment. USD ranges are reference points; international teams can use the local equivalent.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -236,7 +271,7 @@ export default function Home() {
           <p className="eyebrow">START A PROJECT</p>
           <h2>Have something difficult to build?</h2>
           <h3>Good.</h3>
-          <p>Tell us what you are trying to accomplish. We will start with the problem and work forward from there.</p>
+          <p>Tell us what you are trying to accomplish—from anywhere in the world. We will start with the problem and work forward from there.</p>
           <Link href="/start-project" className="button button-large">Start Your Project <span>→</span></Link>
         </div>
       </section>
