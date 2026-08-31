@@ -24,6 +24,8 @@
 - Optional Resend confirmation and internal lead notifications
 - Security response headers and CSP
 - 404, robots, sitemap, metadata, responsive/mobile states, and accessibility focus treatment
+- Panda Digital favicon, web manifest, and 1200×630 Open Graph/Twitter social card
+- Five-stage engagement path: Align → Architect → Build → Validate → Evolve
 
 ## Git milestones
 
@@ -32,7 +34,7 @@ The repository contains separate commits for initialization, security baseline, 
 ## Validation performed in this environment
 
 - Parsed every TypeScript/TSX source file with the TypeScript 5.8.3 compiler parser.
-- Latest pass: 34 files, 0 syntax errors.
+- Latest pass: 35 files, 0 syntax errors.
 - Git repository integrity/history preserved.
 
 ## Environment limitation

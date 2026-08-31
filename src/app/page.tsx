@@ -194,6 +194,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section delivery-section">
+        <div className="shell">
+          <div className="section-heading split-heading">
+            <p className="eyebrow">ENGAGEMENT / FROM PROBLEM TO DELIVERY</p>
+            <div>
+              <h2>A clear path from first conversation to working system.</h2>
+              <p>Enough structure to keep delivery accountable, without adding layers of process that do not improve the outcome.</p>
+            </div>
+          </div>
+          <div className="delivery-track">
+            {[
+              ["01", "Align", "Understand the objective, users, constraints, existing systems, and what success should change."],
+              ["02", "Architect", "Define scope, boundaries, data flows, risks, milestones, and the smallest sensible technical approach."],
+              ["03", "Build", "Ship visible increments with source control, reviewable changes, and communication around decisions."],
+              ["04", "Validate", "Test behavior, edge cases, security assumptions, performance, integrations, and release readiness."],
+              ["05", "Evolve", "Launch, observe, improve, automate, and extend the system as the business learns what it actually needs."]
+            ].map(([code, title, copy]) => (
+              <article key={code}><span>{code}</span><h3>{title}</h3><p>{copy}</p></article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section principles section-contrast">
         <div className="shell">
           <div className="section-heading"><p className="eyebrow">HOW WE THINK</p><h2>Good engineering starts before the code.</h2></div>

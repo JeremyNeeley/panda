@@ -14,7 +14,14 @@ export const metadata: Metadata = {
     description: "Build. Automate. Secure.",
     url: "https://pandadigital.dev",
     siteName: "Panda Digital Systems",
-    type: "website"
+    type: "website",
+    images: [{ url: "/og-card.png", width: 1200, height: 630, alt: "Panda Digital Systems — Build. Automate. Secure." }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Panda Digital Systems",
+    description: "Software, AI, product, cybersecurity, and cloud engineering.",
+    images: ["/og-card.png"]
   },
   alternates: { canonical: "https://pandadigital.dev" },
   category: "technology",

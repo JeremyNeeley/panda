@@ -512,3 +512,13 @@ button { color: inherit; }
   .proof-status-row { display: none; }
   .proof-visual-product { padding: 20px; }
 }
+
+/* Delivery process */
+.delivery-section { border-top: 1px solid var(--border-soft); }
+.delivery-track { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--border); border-left: 1px solid var(--border); }
+.delivery-track article { min-height: 310px; padding: 26px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: flex; flex-direction: column; background: linear-gradient(160deg, rgba(255,255,255,.012), transparent); }
+.delivery-track article > span { color: var(--cyan); font: 9px/1 var(--font-mono); letter-spacing: .12em; }
+.delivery-track h3 { font: 600 25px/1 var(--font-display); letter-spacing: -.035em; margin: 72px 0 14px; }
+.delivery-track p { color: var(--text-2); font-size: 13px; line-height: 1.65; margin: 0; }
+@media (max-width: 900px) { .delivery-track { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 620px) { .delivery-track { grid-template-columns: 1fr; }.delivery-track article { min-height: 240px; }.delivery-track h3 { margin-top: 48px; } }
