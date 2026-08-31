@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import { TurnstileWidget } from "./TurnstileWidget";
 
 const projectTypeChoices = [
@@ -34,6 +34,21 @@ export function ProjectForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const projectType = params.get("type");
+    const requestedServices = params.getAll("service").filter((service) => services.includes(service));
+    const validTypes = new Set(projectTypeChoices.map(([value]) => value));
+
+    if ((projectType && validTypes.has(projectType as (typeof projectTypeChoices)[number][0])) || requestedServices.length > 0) {
+      setData((current) => ({
+        ...current,
+        projectType: projectType && validTypes.has(projectType as (typeof projectTypeChoices)[number][0]) ? projectType : current.projectType,
+        services: requestedServices.length > 0 ? Array.from(new Set([...current.services, ...requestedServices])) : current.services
+      }));
+    }
+  }, []);
+
   const progress = `${(step / 6) * 100}%`;
   const turnstileRequired = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 

@@ -17,7 +17,7 @@ export default function UAppPage() {
         eyebrow="CASE STUDY / EXPERIMENTAL MOBILE"
         title="U App — Interactive Mathematical System"
         copy="A supporting experimental case study in translating a complex visual and mathematical experience into native Flutter software with custom rendering and privacy-aware security architecture."
-        action={{ label: "Discuss a Product", href: "/start-project" }}
+        action={{ label: "Discuss a Product", href: "/start-project?type=build&service=Mobile%20development" }}
         secondary={{ label: "Back to Work", href: "/work" }}
       />
       <section className="section shell case-overview">

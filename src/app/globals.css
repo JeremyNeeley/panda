@@ -593,3 +593,99 @@ button { color: inherit; }
   .readiness-score { border-left: 0; border-top: 1px solid var(--border); padding: 16px 0 0; }
   .readiness-options { grid-template-columns: 1fr; }
 }
+
+/* Case-study evidence */
+.evidence-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+}
+.evidence-strip > div {
+  min-height: 220px;
+  padding: 28px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+.evidence-strip span,
+.metric-band span {
+  color: var(--text-3);
+  font: 9px/1 var(--font-mono);
+  letter-spacing: .12em;
+}
+.evidence-strip strong {
+  font: 600 24px/1.05 var(--font-display);
+  letter-spacing: -.035em;
+  margin: 70px 0 12px;
+}
+.evidence-strip p {
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+.metric-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 0;
+  padding-bottom: 0;
+  border-left: 1px solid var(--border);
+}
+.metric-band > div {
+  min-height: 310px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.metric-band strong {
+  color: var(--text);
+  font: 600 clamp(58px, 7vw, 92px)/.9 var(--font-display);
+  letter-spacing: -.065em;
+  margin: 70px 0 20px;
+}
+.metric-band p {
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .evidence-strip { grid-template-columns: 1fr 1fr; }
+  .metric-band { grid-template-columns: 1fr; }
+  .metric-band > div { min-height: 250px; }
+}
+@media (max-width: 620px) {
+  .evidence-strip { grid-template-columns: 1fr; }
+  .evidence-strip strong { margin-top: 48px; }
+}
+
+/* Service-to-proof and portfolio disclosure */
+.service-actions {
+  display: grid;
+  gap: 14px;
+  margin-top: auto;
+}
+.service-actions .text-link { margin-top: 0; }
+.service-proof-link { color: var(--text-2); }
+.service-proof-link:hover { color: var(--cyan); }
+.work-disclosure {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 720px);
+  gap: 34px;
+  padding: 0 0 42px;
+  align-items: start;
+}
+.work-disclosure p {
+  color: var(--text-2);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0;
+}
+@media (max-width: 620px) {
+  .work-disclosure { grid-template-columns: 1fr; gap: 12px; }
+}

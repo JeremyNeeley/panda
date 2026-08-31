@@ -31,7 +31,8 @@ export const workItems: WorkItem[] = [
     outcome:
       "A broad body of professional engineering work focused on scalable customer-facing and internal systems.",
     tags: ["React", "Next.js", "Node.js", "Python", "PostgreSQL", "AWS"],
-    kind: "experience"
+    kind: "experience",
+    href: "/work/multi-tenant-product-engineering"
   },
   {
     slug: "cloud-delivery-systems",
@@ -42,7 +43,8 @@ export const workItems: WorkItem[] = [
     outcome:
       "Engineering focused on reducing deployment friction and improving the reliability of production change.",
     tags: ["Docker", "Kubernetes", "Terraform", "GitHub Actions", "AWS", "Kafka"],
-    kind: "experience"
+    kind: "experience",
+    href: "/work/cloud-delivery-systems"
   },
   {
     slug: "u-app",

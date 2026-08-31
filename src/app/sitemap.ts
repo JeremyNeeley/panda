@@ -5,6 +5,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["", "weekly", 1],
     ["/work", "weekly", 0.9],
     ["/work/enterprise-ai-support-agent", "monthly", 0.8],
+    ["/work/multi-tenant-product-engineering", "monthly", 0.8],
+    ["/work/cloud-delivery-systems", "monthly", 0.8],
     ["/work/u-app", "monthly", 0.65],
     ["/services", "monthly", 0.9],
     ["/lab", "weekly", 0.75],

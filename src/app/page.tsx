@@ -4,10 +4,10 @@ import { Header } from "@/components/Header";
 import { SystemField } from "@/components/SystemField";
 
 const problems = [
-  ["BUILD", "I need to build something.", "New products, applications, internal platforms, SaaS, mobile experiences, and specialized software."],
-  ["AUTOMATE", "I need to automate something.", "Manual workflows, support operations, documents, repetitive decisions, and disconnected systems."],
-  ["MODERNIZE", "I need to improve something.", "Slow, fragile, outdated, difficult-to-maintain systems that are holding the business back."],
-  ["SECURE", "I need to protect something.", "Applications, APIs, authentication, deployments, data flows, and production architecture."]
+  ["BUILD", "I need to build something.", "New products, applications, internal platforms, SaaS, mobile experiences, and specialized software.", "build"],
+  ["AUTOMATE", "I need to automate something.", "Manual workflows, support operations, documents, repetitive decisions, and disconnected systems.", "automate"],
+  ["MODERNIZE", "I need to improve something.", "Slow, fragile, outdated, difficult-to-maintain systems that are holding the business back.", "modernize"],
+  ["SECURE", "I need to protect something.", "Applications, APIs, authentication, deployments, data flows, and production architecture.", "secure"]
 ];
 
 const capabilities = [
@@ -20,8 +20,8 @@ const capabilities = [
 
 const work = [
   ["AI / INTELLIGENT SYSTEMS", "Systems that retrieve, reason, route, automate, and support real operational workflows.", "AI · AUTOMATION · KNOWLEDGE · APIs", "/work/enterprise-ai-support-agent"],
-  ["SOFTWARE / PRODUCT", "Digital products engineered across interface, application logic, data, and infrastructure.", "WEB · MOBILE · SaaS · BACKEND", "/work"],
-  ["SECURITY / SYSTEMS", "Application analysis, architecture review, secure development, and production hardening.", "APPSEC · AUTH · CLOUD · HARDENING", "/work"]
+  ["SOFTWARE / PRODUCT", "Multi-tenant products engineered across interface, roles, APIs, data, and cloud delivery.", "WEB · SaaS · RBAC · BACKEND", "/work/multi-tenant-product-engineering"],
+  ["CLOUD / DELIVERY", "Delivery systems that make production change repeatable, observable, and easier to recover.", "CI/CD · AWS · CONTAINERS · DATA", "/work/cloud-delivery-systems"]
 ];
 
 const articles = [
@@ -100,12 +100,12 @@ export default function Home() {
           </div>
         </div>
         <div className="problem-grid">
-          {problems.map(([label, title, copy]) => (
+          {problems.map(([label, title, copy, type]) => (
             <article className="problem-card" key={label}>
               <span className="mono-label">{label}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <Link href="/start-project" className="text-link">Tell us about it <span>→</span></Link>
+              <Link href={`/start-project?type=${type}`} className="text-link">Tell us about it <span>→</span></Link>
             </article>
           ))}
         </div>

@@ -11,6 +11,23 @@ export const metadata: Metadata = {
   description: "Software engineering, AI automation, product development, cybersecurity, and cloud systems from Panda Digital Systems."
 };
 
+const relatedProof: Record<string, { label: string; href: string }> = {
+  "software-engineering": { label: "See SaaS engineering experience", href: "/work/multi-tenant-product-engineering" },
+  "ai-automation": { label: "See AI support system case study", href: "/work/enterprise-ai-support-agent" },
+  "product-development": { label: "See product engineering experience", href: "/work/multi-tenant-product-engineering" },
+  "cybersecurity": { label: "Read our authorization field note", href: "/engineering/authentication-is-not-authorization" },
+  "cloud-systems": { label: "See cloud delivery experience", href: "/work/cloud-delivery-systems" }
+};
+
+
+const inquiryHref: Record<string, string> = {
+  "software-engineering": "/start-project?type=build&service=Backend%20development&service=Full%20project%20delivery",
+  "ai-automation": "/start-project?type=automate&service=AI%20%26%20automation",
+  "product-development": "/start-project?type=build&service=Full%20project%20delivery",
+  "cybersecurity": "/start-project?type=secure&service=Cybersecurity",
+  "cloud-systems": "/start-project?type=cloud&service=Cloud%20%2F%20DevOps"
+};
+
 export default function ServicesPage() {
   return (
     <main>
@@ -35,7 +52,10 @@ export default function ServicesPage() {
               <div className="service-side">
                 <div className="service-list">{service.items.map((item) => <span key={item}>{item}</span>)}</div>
                 <div className="service-price"><small>FOCUSED ENGAGEMENTS</small><strong>Starting at {service.starting}</strong></div>
-                <Link href="/start-project" className="text-link">Discuss this capability <span>→</span></Link>
+                <div className="service-actions">
+                  <Link href={relatedProof[service.slug].href} className="text-link service-proof-link">{relatedProof[service.slug].label} <span>↗</span></Link>
+                  <Link href={inquiryHref[service.slug]} className="text-link">Discuss this capability <span>→</span></Link>
+                </div>
               </div>
             </article>
           ))}

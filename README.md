@@ -89,3 +89,14 @@ Never expose `SUPABASE_SERVICE_ROLE_KEY`, `TURNSTILE_SECRET_KEY`, or `RESEND_API
 Public engineering identity: `https://github.com/JeremyNeeley`
 
 Target repository: `JeremyNeeley/panda`.
+
+## Portfolio proof structure
+
+The public work section is intentionally broader than a single application. It currently includes:
+
+- Enterprise AI Support Agent
+- Multi-Tenant Product Engineering (anonymized professional experience)
+- Cloud & Delivery Systems (anonymized professional experience)
+- U App experimental mobile/mathematical system
+
+Service and case-study CTAs carry project context into the Start a Project flow through validated query parameters, reducing repeated input for prospects.

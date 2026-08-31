@@ -48,7 +48,7 @@ for (const file of sourceFiles) {
   for (const pattern of linkPatterns) {
     for (const match of text.matchAll(pattern)) {
       linkCount += 1;
-      const target = match[1].split("#")[0] || "/";
+      const target = match[1].split(/[?#]/)[0] || "/";
       if (!routes.has(target)) errors.push(`Broken internal route: ${path.relative(root, file)} -> ${match[1]}`);
     }
   }

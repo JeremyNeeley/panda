@@ -17,7 +17,7 @@ export default function EnterpriseAiSupportAgentPage() {
         eyebrow="CASE STUDY / AI & INTELLIGENT SYSTEMS"
         title="Enterprise AI Support Agent"
         copy="A production-oriented support architecture designed to investigate problems, retrieve context, interact with tools, and escalate responsibly—not simply produce chat responses."
-        action={{ label: "Discuss an AI System", href: "/start-project" }}
+        action={{ label: "Discuss an AI System", href: "/start-project?type=automate&service=AI%20%26%20automation" }}
         secondary={{ label: "Back to Work", href: "/work" }}
       />
       <section className="section shell case-overview">
@@ -54,7 +54,7 @@ export default function EnterpriseAiSupportAgentPage() {
         <article><p className="eyebrow">ESCALATION</p><h2>Knowing when not to automate is part of the design.</h2><p>Some requests are ambiguous, high-impact, under-documented, or simply better handled by a person. Good escalation preserves context so a human does not have to restart the investigation from zero.</p></article>
         <article><p className="eyebrow">EVALUATION</p><h2>A demo answer is not a reliability metric.</h2><p>Production AI needs repeatable evaluation across retrieval quality, factual grounding, workflow correctness, tool behavior, failure modes, and user outcomes. The system should expose where it is uncertain instead of hiding uncertainty behind confident language.</p></article>
       </section>
-      <SectionCTA title="Building AI for a real workflow?" copy="We can help design the retrieval, integration, evaluation, security, and operational layers around the model." />
+      <SectionCTA title="Building AI for a real workflow?" copy="We can help design the retrieval, integration, evaluation, security, and operational layers around the model." href="/start-project?type=automate&service=AI%20%26%20automation" />
       <Footer />
     </main>
   );

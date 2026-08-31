@@ -9,7 +9,10 @@
 - Responsive Panda Digital Systems homepage
 - Full Work, Services, Panda Lab, Panda Engineering, About, Privacy, and Start a Project pages
 - Dedicated Enterprise AI Support Agent and U App supporting case studies
-- Broad engineering-experience portfolio cards across SaaS/product and cloud/delivery systems
+- Full anonymized Multi-Tenant Product Engineering experience study
+- Full anonymized Cloud & Delivery Systems experience study with selected quantified outcomes
+- Service-to-proof cross-links connecting capabilities directly to relevant work or field notes
+- Context-aware Start a Project links that preselect the originating problem/service
 - Verified GitHub credibility link and organization structured data
 - Proof-over-promises credibility section linking case studies, field notes, Panda Lab, and GitHub
 - Distinct system visuals for AI, multi-tenant product engineering, cloud delivery, and experimental work
@@ -33,9 +36,9 @@
 
 ## Validation performed in this environment
 
-- TypeScript 5.8.3 parser/transpiler check: **38 TS/TSX files, 0 syntax diagnostics** at the latest source pass.
+- TypeScript 5.8.3 parser/transpiler check: **39 TS/TSX files, 0 syntax diagnostics** at the latest source pass.
 - Local-import resolver: **0 missing local imports**.
-- Internal route audit: **14 routes, 0 broken literal internal links**.
+- Internal route audit: **16 routes, 0 broken literal internal links** (including query-string normalization).
 - `npm run audit:release`: **passed**.
 - `git diff --check`: **passed**.
 - Git repository integrity/history preserved.
