@@ -16,13 +16,38 @@ export const metadata: Metadata = {
     siteName: "Panda Digital Systems",
     type: "website"
   },
+  alternates: { canonical: "https://pandadigital.dev" },
+  category: "technology",
   robots: { index: true, follow: true }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Panda Digital Systems",
+              url: "https://pandadigital.dev",
+              slogan: "Build. Automate. Secure.",
+              sameAs: ["https://github.com/JeremyNeeley"],
+              knowsAbout: [
+                "Software Engineering",
+                "Artificial Intelligence",
+                "Automation",
+                "Product Development",
+                "Cybersecurity",
+                "Cloud Systems"
+              ]
+            })
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

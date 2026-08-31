@@ -11,17 +11,17 @@ const problems = [
 ];
 
 const capabilities = [
-  { code: "01", title: "Software Engineering", copy: "Custom applications and digital systems engineered around real business requirements.", tags: ["Web & SaaS", "Backends", "APIs", "Internal Tools"] },
-  { code: "02", title: "AI & Automation", copy: "Intelligent tools and workflows that reduce repetitive work and make information useful.", tags: ["AI Agents", "RAG", "Documents", "Automation"] },
-  { code: "03", title: "Product Development", copy: "From early product thinking to working MVPs, mobile products, and production systems.", tags: ["MVP", "Mobile", "Product", "Modernization"] },
-  { code: "04", title: "Cybersecurity", copy: "Security engineering that challenges assumptions before those assumptions become incidents.", tags: ["AppSec", "API Security", "Auth", "Hardening"] },
-  { code: "05", title: "Cloud & Systems", copy: "Reliable foundations for software that needs to deploy, integrate, scale, and evolve.", tags: ["Cloud", "DevOps", "Data", "Distributed Systems"] }
+  { code: "01", slug: "software-engineering", title: "Software Engineering", copy: "Custom applications and digital systems engineered around real business requirements.", tags: ["Web & SaaS", "Backends", "APIs", "Internal Tools"] },
+  { code: "02", slug: "ai-automation", title: "AI & Automation", copy: "Intelligent tools and workflows that reduce repetitive work and make information useful.", tags: ["AI Agents", "RAG", "Documents", "Automation"] },
+  { code: "03", slug: "product-development", title: "Product Development", copy: "From early product thinking to working MVPs, mobile products, and production systems.", tags: ["MVP", "Mobile", "Product", "Modernization"] },
+  { code: "04", slug: "cybersecurity", title: "Cybersecurity", copy: "Security engineering that challenges assumptions before those assumptions become incidents.", tags: ["AppSec", "API Security", "Auth", "Hardening"] },
+  { code: "05", slug: "cloud-systems", title: "Cloud & Systems", copy: "Reliable foundations for software that needs to deploy, integrate, scale, and evolve.", tags: ["Cloud", "DevOps", "Data", "Distributed Systems"] }
 ];
 
 const work = [
-  ["AI / INTELLIGENT SYSTEMS", "Systems that retrieve, reason, route, automate, and support real operational workflows.", "AI · AUTOMATION · KNOWLEDGE · APIs"],
-  ["SOFTWARE / PRODUCT", "Digital products engineered across interface, application logic, data, and infrastructure.", "WEB · MOBILE · SaaS · BACKEND"],
-  ["SECURITY / SYSTEMS", "Application analysis, architecture review, secure development, and production hardening.", "APPSEC · AUTH · CLOUD · HARDENING"]
+  ["AI / INTELLIGENT SYSTEMS", "Systems that retrieve, reason, route, automate, and support real operational workflows.", "AI · AUTOMATION · KNOWLEDGE · APIs", "/work/enterprise-ai-support-agent"],
+  ["SOFTWARE / PRODUCT", "Digital products engineered across interface, application logic, data, and infrastructure.", "WEB · MOBILE · SaaS · BACKEND", "/work"],
+  ["SECURITY / SYSTEMS", "Application analysis, architecture review, secure development, and production hardening.", "APPSEC · AUTH · CLOUD · HARDENING", "/work"]
 ];
 
 const articles = [
@@ -44,7 +44,7 @@ export default function Home() {
           <p className="hero-copy">We design software, intelligent automation, secure products, and technical infrastructure for ambitious teams.</p>
           <div className="hero-actions">
             <Link href="/start-project" className="button">Start a Project <span>→</span></Link>
-            <Link href="#work" className="button button-secondary">Explore Our Work</Link>
+            <Link href="/work" className="button button-secondary">Explore Our Work</Link>
           </div>
           <div className="hero-categories" aria-label="Capabilities">
             {['SOFTWARE', 'AI', 'PRODUCT', 'SECURITY', 'CLOUD'].map((item) => <span key={item}>{item}</span>)}
@@ -92,7 +92,7 @@ export default function Home() {
                 <h3>{capability.title}</h3>
                 <p>{capability.copy}</p>
                 <div className="tag-row">{capability.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <Link href="/start-project" className="text-link">Explore capability <span>→</span></Link>
+                <Link href={`/services#${capability.slug}`} className="text-link">Explore capability <span>→</span></Link>
               </article>
             ))}
           </div>
@@ -108,8 +108,8 @@ export default function Home() {
           </div>
         </div>
         <div className="work-stack">
-          {work.map(([title, copy, tags], index) => (
-            <article className="work-card" key={title}>
+          {work.map(([title, copy, tags, href], index) => (
+            <Link className="work-card" key={title} href={href}>
               <span className="work-index">0{index + 1}</span>
               <div>
                 <p className="mono-label">{title}</p>
@@ -117,7 +117,7 @@ export default function Home() {
                 <span className="work-tags">{tags}</span>
               </div>
               <span className="work-arrow" aria-hidden="true">↗</span>
-            </article>
+            </Link>
           ))}
         </div>
       </section>
@@ -128,7 +128,7 @@ export default function Home() {
             <p className="eyebrow">PANDA LAB / EXPERIMENTAL SYSTEMS</p>
             <h2>We experiment before clients ask for it.</h2>
             <p>Panda Lab is where technical curiosity becomes working prototypes—AI, automation, security, developer tools, data, interfaces, and emerging technology.</p>
-            <Link href="/start-project" className="button button-secondary">Build with us <span>→</span></Link>
+            <Link href="/lab" className="button button-secondary">Enter Panda Lab <span>→</span></Link>
           </div>
           <div className="lab-console" aria-label="Panda Lab experiment preview">
             <div className="console-bar"><span>LAB / 001</span><span>STATUS: ACTIVE</span></div>
@@ -155,7 +155,7 @@ export default function Home() {
               <span className="mono-label">{category}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <span className="text-link muted-link">Article coming soon</span>
+              <Link href="/engineering" className="text-link muted-link">Explore Panda Engineering <span>→</span></Link>
             </article>
           ))}
         </div>

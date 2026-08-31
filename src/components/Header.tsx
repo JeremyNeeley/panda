@@ -5,11 +5,11 @@ import { useState } from "react";
 import { PandaMark } from "./PandaMark";
 
 const links = [
-  ["Work", "/#work"],
-  ["Services", "/#services"],
-  ["Lab", "/#lab"],
-  ["Engineering", "/#engineering"],
-  ["About", "/#about"]
+  ["Work", "/work"],
+  ["Services", "/services"],
+  ["Lab", "/lab"],
+  ["Engineering", "/engineering"],
+  ["About", "/about"]
 ] as const;
 
 export function Header() {
