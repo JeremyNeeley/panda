@@ -267,3 +267,4 @@ button { color: inherit; }
   .choice-card { min-height: 150px; }
   .form-controls .button { min-width: 0; }
 }
+.turnstile-wrap { margin-top: 22px; min-height: 65px; }

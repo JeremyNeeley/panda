@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { TurnstileWidget } from "./TurnstileWidget";
 
 const projectTypeChoices = [
   ["build", "Build something new", "A product, application, platform, SaaS, or internal system."],
@@ -32,6 +33,7 @@ export function ProjectForm() {
   const [data, setData] = useState<FormData>(initialData);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const progress = `${(step / 6) * 100}%`;
 
   const canContinue = useMemo(() => {
@@ -52,7 +54,7 @@ export function ProjectForm() {
     if (!canContinue) return;
     setStatus("submitting"); setMessage("");
     try {
-      const response = await fetch("/api/leads", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...data, turnstileToken: "" }) });
+      const response = await fetch("/api/leads", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...data, turnstileToken }) });
       const result = await response.json() as { ok?: boolean; message?: string };
       if (!response.ok || !result.ok) throw new Error(result.message || "Submission failed.");
       setStatus("success");
@@ -102,6 +104,7 @@ export function ProjectForm() {
           <label className="trap-field" aria-hidden="true">Website confirmation<input tabIndex={-1} autoComplete="off" value={data.websiteTrap} onChange={(event) => update("websiteTrap", event.target.value)} /></label>
         </div>
         <label className="consent-row"><input type="checkbox" checked={data.consent} onChange={(event) => update("consent", event.target.checked)} /><span>It is okay for Panda Digital Systems to contact me about this project.</span></label>
+        <TurnstileWidget onToken={setTurnstileToken} />
       </FormStep>}
 
       {message && <p className="form-error" role="alert">{message}</p>}

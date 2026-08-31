@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { leadSchema } from "@/server/leads/schema";
 import { storeLead } from "@/server/leads/store";
+import { sendLeadEmails } from "@/server/leads/email";
 import { checkLocalRateLimit } from "@/server/security/rateLimit";
 import { verifyTurnstile } from "@/server/security/turnstile";
 
@@ -62,6 +63,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await storeLead(lead);
+    await sendLeadEmails(lead);
     return NextResponse.json({ ok: true }, { status: 201 });
   } catch (error) {
     console.error("Lead submission failed", error);
