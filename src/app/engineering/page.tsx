@@ -14,7 +14,12 @@ export const metadata: Metadata = {
 const published = [
   "/engineering/ai-agents-production",
   "/engineering/authentication-is-not-authorization",
-  "/engineering/microservices-complexity"
+  "/engineering/microservices-complexity",
+  "/engineering/smallest-system-that-can-grow",
+  "/engineering/reliable-rag-hidden-work",
+  "/engineering/deployment-is-part-of-product",
+  "/engineering/secure-by-design",
+  "/engineering/complexity-carrying-cost"
 ];
 
 export default function EngineeringPage() {

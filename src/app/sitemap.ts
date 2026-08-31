@@ -20,6 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/engineering/ai-agents-production", "monthly", 0.7],
     ["/engineering/authentication-is-not-authorization", "monthly", 0.7],
     ["/engineering/microservices-complexity", "monthly", 0.7],
+    ["/engineering/smallest-system-that-can-grow", "monthly", 0.7],
+    ["/engineering/reliable-rag-hidden-work", "monthly", 0.7],
+    ["/engineering/deployment-is-part-of-product", "monthly", 0.7],
+    ["/engineering/secure-by-design", "monthly", 0.7],
+    ["/engineering/complexity-carrying-cost", "monthly", 0.7],
     ["/about", "monthly", 0.7],
     ["/privacy", "yearly", 0.3],
     ["/start-project", "monthly", 0.9]
