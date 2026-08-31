@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InteriorHero } from "@/components/portfolio/InteriorHero";
@@ -9,6 +10,12 @@ export const metadata: Metadata = {
   title: "Panda Engineering",
   description: "Technical ideas and field notes across software, AI, cybersecurity, cloud, product, data, and engineering decisions."
 };
+
+const published = [
+  "/engineering/ai-agents-production",
+  "/engineering/authentication-is-not-authorization",
+  "/engineering/microservices-complexity"
+];
 
 export default function EngineeringPage() {
   return (
@@ -33,7 +40,11 @@ export default function EngineeringPage() {
               <p className="mono-label">{category}</p>
               <h2>{title}</h2>
               <p>{copy}</p>
-              <span className="text-link muted-link">Field note in development</span>
+              {published[index] ? (
+                <Link href={published[index]} className="text-link">Read field note <span>→</span></Link>
+              ) : (
+                <span className="text-link muted-link">Field note in development</span>
+              )}
             </article>
           ))}
         </div>

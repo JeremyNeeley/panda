@@ -9,6 +9,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/services", "monthly", 0.9],
     ["/lab", "weekly", 0.75],
     ["/engineering", "weekly", 0.75],
+    ["/engineering/ai-agents-production", "monthly", 0.7],
+    ["/engineering/authentication-is-not-authorization", "monthly", 0.7],
+    ["/engineering/microservices-complexity", "monthly", 0.7],
     ["/about", "monthly", 0.7],
     ["/start-project", "monthly", 0.9]
   ] as const;

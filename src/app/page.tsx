@@ -25,9 +25,9 @@ const work = [
 ];
 
 const articles = [
-  ["AI / ARCHITECTURE", "Why AI Agents Fail Outside the Demo", "Where prototypes break when they meet permissions, messy data, users, and real business operations."],
-  ["SECURITY / ENGINEERING", "Authentication Is Not Authorization", "Why proving who someone is does not answer what they should be allowed to do."],
-  ["SYSTEMS / ARCHITECTURE", "When Microservices Make Your Product Worse", "A practical look at when distribution creates more operational complexity than value."]
+  ["AI / ARCHITECTURE", "Why AI Agents Fail Outside the Demo", "Where prototypes break when they meet permissions, messy data, users, and real business operations.", "/engineering/ai-agents-production"],
+  ["SECURITY / ENGINEERING", "Authentication Is Not Authorization", "Why proving who someone is does not answer what they should be allowed to do.", "/engineering/authentication-is-not-authorization"],
+  ["SYSTEMS / ARCHITECTURE", "When Microservices Make Your Product Worse", "A practical look at when distribution creates more operational complexity than value.", "/engineering/microservices-complexity"]
 ];
 
 export default function Home() {
@@ -150,12 +150,12 @@ export default function Home() {
           <div><h2>Ideas from building real systems.</h2><p>Broad technical thinking across software, AI, security, infrastructure, product, data, and emerging technology.</p></div>
         </div>
         <div className="article-grid">
-          {articles.map(([category, title, copy]) => (
+          {articles.map(([category, title, copy, href]) => (
             <article className="article-card" key={title}>
               <span className="mono-label">{category}</span>
               <h3>{title}</h3>
               <p>{copy}</p>
-              <Link href="/engineering" className="text-link muted-link">Explore Panda Engineering <span>→</span></Link>
+              <Link href={href} className="text-link">Read field note <span>→</span></Link>
             </article>
           ))}
         </div>
