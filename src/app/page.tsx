@@ -160,7 +160,7 @@ export default function Home() {
                 <h3>{capability.title}</h3>
                 <p>{capability.copy}</p>
                 <div className="tag-row">{capability.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                <Link href={`/services#${capability.slug}`} className="text-link">Explore capability <span>→</span></Link>
+                <Link href={`/services/${capability.slug}`} className="text-link">Explore capability <span>→</span></Link>
               </article>
             ))}
           </div>

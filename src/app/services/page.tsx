@@ -53,6 +53,7 @@ export default function ServicesPage() {
                 <div className="service-list">{service.items.map((item) => <span key={item}>{item}</span>)}</div>
                 <div className="service-price"><small>FOCUSED ENGAGEMENTS</small><strong>Starting at {service.starting}</strong></div>
                 <div className="service-actions">
+                  <Link href={`/services/${service.slug}`} className="text-link">Explore service <span>→</span></Link>
                   <Link href={relatedProof[service.slug].href} className="text-link service-proof-link">{relatedProof[service.slug].label} <span>↗</span></Link>
                   <Link href={inquiryHref[service.slug]} className="text-link">Discuss this capability <span>→</span></Link>
                 </div>
