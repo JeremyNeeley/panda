@@ -15,6 +15,7 @@ export function Footer() {
           <Link href="/lab">Panda Lab</Link>
           <Link href="/engineering">Panda Engineering</Link>
           <Link href="/about">About</Link>
+            <Link href="/privacy">Privacy</Link>
           <Link href="/start-project">Start a Project</Link>
           <a href="https://github.com/JeremyNeeley" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>

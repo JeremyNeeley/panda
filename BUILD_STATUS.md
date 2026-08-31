@@ -1,21 +1,25 @@
 # PandaDigital.dev v1 — Build Status
 
+## Step 12 status
+
+**Source-complete release candidate.** The public portfolio, conversion flow, security boundaries, content routes, one working Panda Lab experiment, and release/CI checks are implemented and committed.
+
 ## Implemented
 
 - Responsive Panda Digital Systems homepage
-- Full Work, Services, Panda Lab, Panda Engineering, and About pages
+- Full Work, Services, Panda Lab, Panda Engineering, About, Privacy, and Start a Project pages
 - Dedicated Enterprise AI Support Agent and U App supporting case studies
 - Broad engineering-experience portfolio cards across SaaS/product and cloud/delivery systems
 - Verified GitHub credibility link and organization structured data
 - Proof-over-promises credibility section linking case studies, field notes, Panda Lab, and GitHub
 - Distinct system visuals for AI, multi-tenant product engineering, cloud delivery, and experimental work
 - Three published Panda Engineering field notes with dedicated article layouts
+- Working Panda Lab System Readiness Map interactive experiment
 - Broad positioning across software, AI, product, cybersecurity, and cloud
-- Original geometric Panda mark (CSS/HTML; no external asset dependency)
+- Original geometric Panda mark with no external asset dependency
 - Animated system/network hero with reduced-motion support
-- Problem-led service funnel
-- Capabilities, selected-work, Panda Lab, Panda Engineering, principles, and CTA sections
-- Multi-step Start a Project intake flow
+- Problem-led service funnel and five-stage engagement path: Align → Architect → Build → Validate → Evolve
+- Multi-step Start a Project intake flow with accessibility states and privacy disclosure
 - Server-side Zod validation
 - Same-origin check and request-size protection
 - Honeypot and local defense-in-depth rate limiter
@@ -23,32 +27,34 @@
 - Server-only Supabase lead persistence path with RLS-oriented schema
 - Optional Resend confirmation and internal lead notifications
 - Security response headers and CSP
-- 404, robots, sitemap, metadata, responsive/mobile states, and accessibility focus treatment
-- Panda Digital favicon, web manifest, and 1200×630 Open Graph/Twitter social card
-- Five-stage engagement path: Align → Architect → Build → Validate → Evolve
-
-## Git milestones
-
-The repository contains separate commits for initialization, security baseline, homepage/design system, project intake, Turnstile/email security, repository cleanup, and final hardening.
+- 404, robots, sitemap, metadata, responsive/mobile states, focus treatment, favicon, web manifest, and Open Graph/Twitter card
+- Dependency-free `npm run audit:release` route/import/release-file audit
+- GitHub Actions CI definition for install → audit → typecheck → lint → production build
 
 ## Validation performed in this environment
 
-- Parsed every TypeScript/TSX source file with the TypeScript 5.8.3 compiler parser.
-- Latest pass: 35 files, 0 syntax errors.
+- TypeScript 5.8.3 parser/transpiler check: **38 TS/TSX files, 0 syntax diagnostics** at the latest source pass.
+- Local-import resolver: **0 missing local imports**.
+- Internal route audit: **14 routes, 0 broken literal internal links**.
+- `npm run audit:release`: **passed**.
+- `git diff --check`: **passed**.
 - Git repository integrity/history preserved.
 
 ## Environment limitation
 
-The execution environment could not reach the npm registry, so `npm install`, Next.js compilation, ESLint, and the production build could not be completed here. Run the following in an internet-connected development environment before deployment:
+The execution environment cannot resolve `registry.npmjs.org` (`EAI_AGAIN`). Because dependencies cannot be downloaded here, the actual Next.js compiler, ESLint, and complete TypeScript dependency-aware typecheck cannot run in this container.
+
+The repository includes GitHub CI to run those checks automatically in an internet-connected GitHub runner. Before production deployment, require a green CI run for:
 
 ```bash
 npm install
+npm run audit:release
 npm run typecheck
 npm run lint
 npm run build
 ```
 
-Next.js is pinned to the August 2026 security release `16.3.3`, and React is pinned to `19.2.7`.
+After the first successful dependency install, commit the generated `package-lock.json` and switch CI to `npm ci` for reproducible installs.
 
 ## Production configuration required before accepting leads
 
@@ -56,4 +62,5 @@ Next.js is pinned to the August 2026 security release `16.3.3`, and React is pin
 - Cloudflare Turnstile site + secret keys
 - Durable WAF/edge rate limit for `/api/leads`
 - Optional Resend domain verification and API key
+- Final privacy/business contact details
 - DNS/hosting configuration for `PandaDigital.dev`

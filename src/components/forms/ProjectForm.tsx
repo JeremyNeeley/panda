@@ -70,7 +70,7 @@ export function ProjectForm() {
 
   return (
     <form className="project-form" onSubmit={submit} noValidate>
-      <div className="form-progress" aria-label={`Step ${step} of 6`}><span style={{ width: progress }} /></div>
+      <div className="form-progress" role="progressbar" aria-label="Project intake progress" aria-valuemin={1} aria-valuemax={6} aria-valuenow={step}><span style={{ width: progress }} /></div>
       <div className="form-meta"><span>0{step} / 06</span><span>PROJECT INTAKE</span></div>
 
       {step === 1 && <FormStep title="What can we help you with?" description="Start with the problem. You do not need to know the technology yet.">
@@ -79,19 +79,19 @@ export function ProjectForm() {
 
       {step === 2 && <FormStep title="Tell us about the project." description="What are you trying to build or solve?">
         <label className="field"><span>Project or problem</span><textarea rows={8} value={data.description} onChange={(event) => update("description", event.target.value)} placeholder="Tell us what you're working on, what's getting in the way, or what you'd like to create." maxLength={5000} /></label>
-        <fieldset className="fieldset"><legend>Do you already have something built?</legend><div className="pill-grid">{stages.map(([value, label]) => <button type="button" className={data.projectStage === value ? "pill active" : "pill"} onClick={() => update("projectStage", value)} key={value}>{label}</button>)}</div></fieldset>
+        <fieldset className="fieldset"><legend>Do you already have something built?</legend><div className="pill-grid">{stages.map(([value, label]) => <button type="button" aria-pressed={data.projectStage === value} className={data.projectStage === value ? "pill active" : "pill"} onClick={() => update("projectStage", value)} key={value}>{label}</button>)}</div></fieldset>
       </FormStep>}
 
       {step === 3 && <FormStep title="What kind of help do you need?" description="Choose as many as apply. 'Help me decide' is a perfectly good answer.">
-        <div className="service-choice-grid">{services.map((service) => <button type="button" key={service} className={data.services.includes(service) ? "service-choice active" : "service-choice"} onClick={() => toggleService(service)}><span>{data.services.includes(service) ? "✓" : "+"}</span>{service}</button>)}</div>
+        <div className="service-choice-grid">{services.map((service) => <button type="button" key={service} aria-pressed={data.services.includes(service)} className={data.services.includes(service) ? "service-choice active" : "service-choice"} onClick={() => toggleService(service)}><span>{data.services.includes(service) ? "✓" : "+"}</span>{service}</button>)}</div>
       </FormStep>}
 
       {step === 4 && <FormStep title="What level of investment are you considering?" description="A range helps us recommend an engagement that matches the size of the problem.">
-        <div className="budget-grid">{budgets.map(([value, label]) => <button type="button" className={data.budget === value ? "budget-card active" : "budget-card"} onClick={() => update("budget", value)} key={value}>{label}</button>)}</div>
+        <div className="budget-grid">{budgets.map(([value, label]) => <button type="button" aria-pressed={data.budget === value} className={data.budget === value ? "budget-card active" : "budget-card"} onClick={() => update("budget", value)} key={value}>{label}</button>)}</div>
       </FormStep>}
 
       {step === 5 && <FormStep title="When would you like to start?" description="We will use this to understand urgency and delivery expectations.">
-        <div className="budget-grid">{timelines.map(([value, label]) => <button type="button" className={data.timeline === value ? "budget-card active" : "budget-card"} onClick={() => update("timeline", value)} key={value}>{label}</button>)}</div>
+        <div className="budget-grid">{timelines.map(([value, label]) => <button type="button" aria-pressed={data.timeline === value} className={data.timeline === value ? "budget-card active" : "budget-card"} onClick={() => update("timeline", value)} key={value}>{label}</button>)}</div>
         <label className="field field-short"><span>Is there a deadline? <em>Optional</em></span><input value={data.deadline} onChange={(event) => update("deadline", event.target.value)} maxLength={120} placeholder="Example: Investor demo on November 15" /></label>
       </FormStep>}
 
@@ -104,7 +104,7 @@ export function ProjectForm() {
           <label className="field contact-wide"><span>Website</span><input type="url" value={data.website} onChange={(event) => update("website", event.target.value)} placeholder="https://" maxLength={300} /></label>
           <label className="trap-field" aria-hidden="true">Website confirmation<input tabIndex={-1} autoComplete="off" value={data.websiteTrap} onChange={(event) => update("websiteTrap", event.target.value)} /></label>
         </div>
-        <label className="consent-row"><input type="checkbox" checked={data.consent} onChange={(event) => update("consent", event.target.checked)} /><span>It is okay for Panda Digital Systems to contact me about this project.</span></label>
+        <label className="consent-row"><input type="checkbox" checked={data.consent} onChange={(event) => update("consent", event.target.checked)} /><span>It is okay for Panda Digital Systems to contact me about this project. <a href="/privacy" target="_blank" rel="noreferrer">Privacy</a></span></label>
         <TurnstileWidget onToken={setTurnstileToken} />
       </FormStep>}
 
@@ -122,5 +122,5 @@ function FormStep({ title, description, children }: { title: string; description
 }
 
 function ChoiceCard({ active, title, copy, onClick }: { active: boolean; title: string; copy: string; onClick: () => void }) {
-  return <button type="button" className={active ? "choice-card active" : "choice-card"} onClick={onClick}><span className="choice-indicator">{active ? "✓" : "+"}</span><strong>{title}</strong><small>{copy}</small></button>;
+  return <button type="button" aria-pressed={active} className={active ? "choice-card active" : "choice-card"} onClick={onClick}><span className="choice-indicator">{active ? "✓" : "+"}</span><strong>{title}</strong><small>{copy}</small></button>;
 }

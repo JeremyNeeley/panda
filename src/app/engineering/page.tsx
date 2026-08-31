@@ -36,7 +36,7 @@ export default function EngineeringPage() {
         <div className="engineering-grid">
           {engineeringTopics.map(([category, title, copy], index) => (
             <article className="engineering-card" key={title}>
-              <div className="engineering-card-top"><span>NOTE / {String(index + 1).padStart(2, "0")}</span><span>COMING SOON</span></div>
+              <div className="engineering-card-top"><span>NOTE / {String(index + 1).padStart(2, "0")}</span><span>{published[index] ? "PUBLISHED" : "IN DEVELOPMENT"}</span></div>
               <p className="mono-label">{category}</p>
               <h2>{title}</h2>
               <p>{copy}</p>

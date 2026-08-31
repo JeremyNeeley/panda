@@ -8,11 +8,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ["/work/u-app", "monthly", 0.65],
     ["/services", "monthly", 0.9],
     ["/lab", "weekly", 0.75],
+    ["/lab/system-readiness", "monthly", 0.7],
     ["/engineering", "weekly", 0.75],
     ["/engineering/ai-agents-production", "monthly", 0.7],
     ["/engineering/authentication-is-not-authorization", "monthly", 0.7],
     ["/engineering/microservices-complexity", "monthly", 0.7],
     ["/about", "monthly", 0.7],
+    ["/privacy", "yearly", 0.3],
     ["/start-project", "monthly", 0.9]
   ] as const;
 
