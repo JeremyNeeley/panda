@@ -268,3 +268,7 @@ button { color: inherit; }
   .form-controls .button { min-width: 0; }
 }
 .turnstile-wrap { margin-top: 22px; min-height: 65px; }
+.not-found { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.not-found .eyebrow { margin-top: 70px; }
+.not-found h1 { font: 600 clamp(54px, 8vw, 100px)/.95 var(--font-display); letter-spacing: -.06em; margin: 16px 0; }
+.not-found > p:not(.eyebrow) { color: var(--text-2); font-size: 17px; margin: 0 0 28px; }

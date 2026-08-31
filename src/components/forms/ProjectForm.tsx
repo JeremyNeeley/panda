@@ -35,6 +35,7 @@ export function ProjectForm() {
   const [message, setMessage] = useState("");
   const [turnstileToken, setTurnstileToken] = useState("");
   const progress = `${(step / 6) * 100}%`;
+  const turnstileRequired = Boolean(process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY);
 
   const canContinue = useMemo(() => {
     if (step === 1) return Boolean(data.projectType);
@@ -42,9 +43,9 @@ export function ProjectForm() {
     if (step === 3) return data.services.length > 0;
     if (step === 4) return Boolean(data.budget);
     if (step === 5) return Boolean(data.timeline);
-    if (step === 6) return data.name.trim().length >= 2 && /.+@.+\..+/.test(data.email) && data.consent;
+    if (step === 6) return data.name.trim().length >= 2 && /.+@.+\..+/.test(data.email) && data.consent && (!turnstileRequired || Boolean(turnstileToken));
     return false;
-  }, [data, step]);
+  }, [data, step, turnstileRequired, turnstileToken]);
 
   const update = <K extends keyof FormData>(key: K, value: FormData[K]) => setData((current) => ({ ...current, [key]: value }));
   const toggleService = (service: string) => update("services", data.services.includes(service) ? data.services.filter((item) => item !== service) : [...data.services, service]);

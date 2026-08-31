@@ -34,6 +34,9 @@ export async function POST(request: NextRequest) {
   let raw: unknown;
   try {
     raw = await request.json();
+    if (JSON.stringify(raw).length > MAX_BODY_BYTES) {
+      return NextResponse.json({ ok: false, message: "Request too large." }, { status: 413 });
+    }
   } catch {
     return NextResponse.json({ ok: false, message: "Invalid request." }, { status: 400 });
   }

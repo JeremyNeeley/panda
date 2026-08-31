@@ -6,6 +6,12 @@ const WINDOW_MS = 10 * 60 * 1000;
 
 export function checkLocalRateLimit(key: string) {
   const now = Date.now();
+  if (buckets.size > 5000) {
+    for (const [bucketKey, entry] of buckets) {
+      if (entry.resetAt <= now) buckets.delete(bucketKey);
+    }
+    if (buckets.size > 5000) buckets.delete(buckets.keys().next().value as string);
+  }
   const existing = buckets.get(key);
   if (!existing || existing.resetAt <= now) {
     buckets.set(key, { count: 1, resetAt: now + WINDOW_MS });
