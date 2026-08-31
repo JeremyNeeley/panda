@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InteriorHero } from "@/components/portfolio/InteriorHero";
 import { SectionCTA } from "@/components/portfolio/SectionCTA";
+import { CaseStudyDecision } from "@/components/portfolio/CaseStudyDecision";
+import { CaseStudyNav } from "@/components/portfolio/CaseStudyNav";
 
 export const metadata: Metadata = {
   title: "Multi-Tenant Product Engineering",
@@ -88,6 +90,32 @@ export default function MultiTenantProductEngineeringPage() {
         </div>
       </section>
 
+      <CaseStudyDecision
+        proof={[
+          { label: "BOUNDARIES", value: "Tenant-aware", detail: "Roles, data access, services, and operations are designed around explicit tenancy boundaries." },
+          { label: "BACKEND", value: "API-first", detail: "Business rules sit behind stable interfaces that can support web clients, integrations, and future surfaces." },
+          { label: "DELIVERY", value: "Cloud-ready", detail: "Product engineering includes deployment, observability, database performance, and operational ownership." }
+        ]}
+        delivered={[
+          "Role-aware product journeys backed by explicit authorization rules",
+          "Tenant-conscious API and PostgreSQL data-model design",
+          "React and Next.js product interfaces connected to backend services",
+          "Node.js and Python service layers built around business workflows",
+          "AWS delivery patterns with production reliability in scope from the start"
+        ]}
+        fit={[
+          "You are building a SaaS product with multiple companies, roles, or permission levels",
+          "Your internal platform has outgrown ad-hoc authorization or data-access rules",
+          "The frontend is moving faster than the API and data model can safely support",
+          "You need a product architecture that can change without becoming a rewrite project"
+        ]}
+        inquiryHref="/start-project?type=build&service=Backend%20development&service=Full%20project%20delivery"
+        inquiryLabel="Plan a SaaS system"
+      />
+      <CaseStudyNav
+        previous={{ label: "Enterprise AI Support Agent", href: "/work/enterprise-ai-support-agent" }}
+        next={{ label: "Cloud & Delivery Systems", href: "/work/cloud-delivery-systems" }}
+      />
       <SectionCTA
         title="Building a SaaS or internal platform?"
         copy="We can help shape the product architecture, tenant boundaries, APIs, data model, delivery path, and the engineering decisions that keep future change manageable."

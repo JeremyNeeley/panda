@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InteriorHero } from "@/components/portfolio/InteriorHero";
 import { SectionCTA } from "@/components/portfolio/SectionCTA";
+import { CaseStudyDecision } from "@/components/portfolio/CaseStudyDecision";
+import { CaseStudyNav } from "@/components/portfolio/CaseStudyNav";
 
 export const metadata: Metadata = {
   title: "Enterprise AI Support Agent",
@@ -54,6 +56,29 @@ export default function EnterpriseAiSupportAgentPage() {
         <article><p className="eyebrow">ESCALATION</p><h2>Knowing when not to automate is part of the design.</h2><p>Some requests are ambiguous, high-impact, under-documented, or simply better handled by a person. Good escalation preserves context so a human does not have to restart the investigation from zero.</p></article>
         <article><p className="eyebrow">EVALUATION</p><h2>A demo answer is not a reliability metric.</h2><p>Production AI needs repeatable evaluation across retrieval quality, factual grounding, workflow correctness, tool behavior, failure modes, and user outcomes. The system should expose where it is uncertain instead of hiding uncertainty behind confident language.</p></article>
       </section>
+      <CaseStudyDecision
+        proof={[
+          { label: "SYSTEM", value: "5 layers", detail: "Request, retrieval, reasoning, approved action, and escalation are treated as separate operating concerns." },
+          { label: "OPERATIONS", value: "Human-aware", detail: "Escalation is designed into the workflow rather than bolted on after the model fails." },
+          { label: "RISK", value: "Bounded tools", detail: "Tool access is modeled as explicit capabilities with validated inputs and failure handling." }
+        ]}
+        delivered={[
+          "Retrieval and grounding architecture shaped around relevance, recency, and permissions",
+          "Structured troubleshooting flow instead of unconstrained answer generation",
+          "Tool and API boundaries for approved operational actions",
+          "Human escalation that preserves investigation context",
+          "Evaluation criteria for grounding, workflow correctness, tool behavior, and failure modes"
+        ]}
+        fit={[
+          "Your support team works across fragmented documentation or operational systems",
+          "An AI assistant needs to call tools, APIs, or internal services safely",
+          "You need a reliable handoff between automation and human specialists",
+          "A demo chatbot exists, but production behavior, evaluation, or governance is still unclear"
+        ]}
+        inquiryHref="/start-project?type=automate&service=AI%20%26%20automation"
+        inquiryLabel="Plan an AI system"
+      />
+      <CaseStudyNav next={{ label: "Multi-Tenant Product Engineering", href: "/work/multi-tenant-product-engineering" }} />
       <SectionCTA title="Building AI for a real workflow?" copy="We can help design the retrieval, integration, evaluation, security, and operational layers around the model." href="/start-project?type=automate&service=AI%20%26%20automation" />
       <Footer />
     </main>

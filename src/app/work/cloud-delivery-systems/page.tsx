@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InteriorHero } from "@/components/portfolio/InteriorHero";
 import { SectionCTA } from "@/components/portfolio/SectionCTA";
+import { CaseStudyDecision } from "@/components/portfolio/CaseStudyDecision";
+import { CaseStudyNav } from "@/components/portfolio/CaseStudyNav";
 
 export const metadata: Metadata = {
   title: "Cloud & Delivery Systems",
@@ -85,6 +87,32 @@ export default function CloudDeliverySystemsPage() {
         </article>
       </section>
 
+      <CaseStudyDecision
+        proof={[
+          { label: "DELIVERY", value: "40% faster", detail: "Documented reduction in deployment time through automated CI/CD, containers, infrastructure as code, and GitHub Actions." },
+          { label: "DATABASE", value: "25% lower latency", detail: "Documented query-latency improvement through SQL, stored-procedure, and PostgreSQL indexing work." },
+          { label: "SYSTEMS", value: "Async-ready", detail: "Kafka and RabbitMQ patterns support workflows that should not depend on synchronous service coupling." }
+        ]}
+        delivered={[
+          "Automated CI/CD pipelines with repeatable quality and deployment gates",
+          "Containerized delivery using Docker and Kubernetes",
+          "Infrastructure as code with Terraform and cloud-native AWS patterns",
+          "Event-driven workflows using Kafka and RabbitMQ where asynchronous boundaries fit",
+          "Database and query optimization before adding unnecessary distributed complexity"
+        ]}
+        fit={[
+          "Releases are manual, fragile, or depend on one person knowing the sequence",
+          "Environment drift or infrastructure changes make deployment unpredictable",
+          "Database latency is becoming a product or operational problem",
+          "Your system needs clearer asynchronous boundaries, observability, or rollback discipline"
+        ]}
+        inquiryHref="/start-project?type=cloud&service=Cloud%20%2F%20DevOps"
+        inquiryLabel="Improve delivery systems"
+      />
+      <CaseStudyNav
+        previous={{ label: "Multi-Tenant Product Engineering", href: "/work/multi-tenant-product-engineering" }}
+        next={{ label: "U App — Interactive Mathematical System", href: "/work/u-app" }}
+      />
       <SectionCTA
         title="Need faster, safer production delivery?"
         copy="We can help simplify the release path, improve infrastructure repeatability, reduce operational friction, and strengthen the systems behind your application."

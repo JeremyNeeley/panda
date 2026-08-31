@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InteriorHero } from "@/components/portfolio/InteriorHero";
 import { SectionCTA } from "@/components/portfolio/SectionCTA";
+import { CaseStudyDecision } from "@/components/portfolio/CaseStudyDecision";
+import { CaseStudyNav } from "@/components/portfolio/CaseStudyNav";
 
 export const metadata: Metadata = {
   title: "U App — Experimental Mobile Engineering",
@@ -50,6 +52,29 @@ export default function UAppPage() {
         <article><p className="eyebrow">APPLIED MATHEMATICS</p><h2>Complex mathematics stays an implementation detail until it helps explain the product.</h2><p>The project uses an E8-derived geometric structure and multidimensional projection, but the portfolio keeps that detail in context instead of making it the identity of Panda Digital Systems.</p></article>
         <article><p className="eyebrow">SECURITY REVIEW</p><h2>Build it. Then question it.</h2><p>The Android artifact was also reviewed from a release-readiness and security perspective, reinforcing the broader Panda principle that implementation should be inspected for how it can fail—not only for whether it runs.</p></article>
       </section>
+      <CaseStudyDecision
+        proof={[
+          { label: "ONBOARDING", value: "39 scenes", detail: "The native translation preserves the complete founder-onboarding sequence rather than reducing it to a few representative screens." },
+          { label: "GEOMETRY", value: "240 roots", detail: "The native Dart geometry engine generates the complete minimal norm²=2 E8 root set used by the visual system." },
+          { label: "RENDERING", value: "Native", detail: "Flutter, Dart, and CustomPainter own the interaction and drawing model directly rather than embedding the original web experience." }
+        ]}
+        delivered={[
+          "Native Flutter translation of a complex interactive product experience",
+          "Custom rendering with depth, motion, touch response, inertia, and projection behavior",
+          "A native Dart multidimensional geometry engine rather than a visual placeholder",
+          "Separation between experience state, mathematical representation, and protected identity state",
+          "Android artifact review for security and release-readiness concerns"
+        ]}
+        fit={[
+          "Your product depends on unusual interaction, visualization, or custom rendering",
+          "A prototype needs to become a real native application instead of a wrapper",
+          "Technical behavior beneath the interface is as important as the visual design",
+          "The project combines product design, security boundaries, and specialized engineering"
+        ]}
+        inquiryHref="/start-project?type=build&service=Mobile%20development"
+        inquiryLabel="Discuss an unusual product"
+      />
+      <CaseStudyNav previous={{ label: "Cloud & Delivery Systems", href: "/work/cloud-delivery-systems" }} />
       <SectionCTA title="Have an unusual product or interaction problem?" copy="We enjoy technical work that needs product thinking, custom engineering, and careful boundaries to meet in one system." />
       <Footer />
     </main>

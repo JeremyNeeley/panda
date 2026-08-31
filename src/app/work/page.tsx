@@ -57,6 +57,31 @@ export default function WorkPage() {
             </article>
           ))}
         </div>
+
+        <div className="problem-finder">
+          <div className="problem-finder-head">
+            <div>
+              <p className="eyebrow">FIND YOUR CLOSEST PROBLEM</p>
+              <h2>Start with what is difficult right now.</h2>
+            </div>
+            <p>You do not need to know the correct architecture or service category before contacting us. Choose the situation that feels closest to yours and use the relevant case study as a starting point.</p>
+          </div>
+          <div className="problem-finder-grid">
+            {[
+              ["01 / AI OPERATIONS", "We have an AI prototype, but it is not ready for real workflows.", "Retrieval, tools, permissions, evaluation, and escalation need to become one operating system.", "/work/enterprise-ai-support-agent"],
+              ["02 / PRODUCT SYSTEMS", "Our SaaS or internal platform is getting harder to change safely.", "Tenant boundaries, roles, APIs, data models, and product delivery need clearer architecture.", "/work/multi-tenant-product-engineering"],
+              ["03 / CLOUD & DELIVERY", "Shipping changes is slow, fragile, or operationally expensive.", "CI/CD, infrastructure, containers, databases, and async services need a more dependable path to production.", "/work/cloud-delivery-systems"],
+              ["04 / CUSTOM PRODUCT", "The product needs engineering that does not fit a standard template.", "Custom rendering, mobile behavior, mathematical systems, or unusual security boundaries need purpose-built implementation.", "/work/u-app"]
+            ].map(([label, title, copy, href]) => (
+              <article className="problem-finder-card" key={label}>
+                <span>{label}</span>
+                <h3>{title}</h3>
+                <p>{copy}</p>
+                <Link className="text-link" href={href}>See relevant proof <span>→</span></Link>
+              </article>
+            ))}
+          </div>
+        </div>
       </section>
       <SectionCTA />
       <Footer />
