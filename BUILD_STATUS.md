@@ -6,7 +6,9 @@
 - Full Work, Services, Panda Lab, Panda Engineering, and About pages
 - Dedicated Enterprise AI Support Agent and U App supporting case studies
 - Broad engineering-experience portfolio cards across SaaS/product and cloud/delivery systems
-- GitHub credibility link and organization structured data
+- Verified GitHub credibility link and organization structured data
+- Proof-over-promises credibility section linking case studies, field notes, Panda Lab, and GitHub
+- Distinct system visuals for AI, multi-tenant product engineering, cloud delivery, and experimental work
 - Three published Panda Engineering field notes with dedicated article layouts
 - Broad positioning across software, AI, product, cybersecurity, and cloud
 - Original geometric Panda mark (CSS/HTML; no external asset dependency)
@@ -30,7 +32,7 @@ The repository contains separate commits for initialization, security baseline, 
 ## Validation performed in this environment
 
 - Parsed every TypeScript/TSX source file with the TypeScript 5.8.3 compiler parser.
-- Latest pass: 32 files, 0 syntax errors.
+- Latest pass: 34 files, 0 syntax errors.
 - Git repository integrity/history preserved.
 
 ## Environment limitation

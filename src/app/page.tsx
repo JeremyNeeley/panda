@@ -58,6 +58,39 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="proof-section shell" aria-labelledby="proof-heading">
+        <div className="proof-heading">
+          <p className="eyebrow">PROOF OVER PROMISES</p>
+          <h2 id="proof-heading">See how we think before you hire us.</h2>
+        </div>
+        <div className="proof-grid">
+          <Link href="/work" className="proof-card">
+            <span className="proof-code">01 / CASE STUDIES</span>
+            <strong>Real system breakdowns</strong>
+            <p>Constraints, architecture, failure modes, and decisions—not a wall of technology logos.</p>
+            <span className="proof-arrow">Explore work ↗</span>
+          </Link>
+          <Link href="/engineering" className="proof-card">
+            <span className="proof-code">02 / FIELD NOTES</span>
+            <strong>Public technical thinking</strong>
+            <p>AI, security, product, cloud, and systems writing that shows how engineering decisions are evaluated.</p>
+            <span className="proof-arrow">Read notes ↗</span>
+          </Link>
+          <Link href="/lab" className="proof-card">
+            <span className="proof-code">03 / PANDA LAB</span>
+            <strong>Experiments before claims</strong>
+            <p>Small prototypes used to test risky ideas, boundaries, interfaces, and emerging technical approaches.</p>
+            <span className="proof-arrow">Enter lab ↗</span>
+          </Link>
+          <a href="https://github.com/JeremyNeeley" target="_blank" rel="noreferrer" className="proof-card proof-card-github">
+            <span className="proof-code">04 / PUBLIC ENGINEERING</span>
+            <strong>GitHub / @JeremyNeeley</strong>
+            <p>The public engineering identity behind Panda Digital Systems, linked directly instead of hidden behind agency language.</p>
+            <span className="proof-arrow">Open GitHub ↗</span>
+          </a>
+        </div>
+      </section>
+
       <section className="section shell" id="about">
         <div className="section-heading split-heading">
           <p className="eyebrow">START WITH THE PROBLEM</p>

@@ -30,6 +30,19 @@ export default function AboutPage() {
           <p>That is why Panda Digital Systems spans software engineering, AI and automation, product development, cybersecurity, and cloud systems. The goal is not to collect service labels. The goal is to understand enough of the whole system to make better decisions.</p>
         </div>
       </section>
+      <section className="section shell engineering-identity">
+        <div>
+          <p className="eyebrow">PUBLIC ENGINEERING IDENTITY</p>
+          <h2>Accountability should be visible.</h2>
+          <p>Panda Digital Systems is built around source-controlled delivery, explicit technical reasoning, and work that can be discussed at the system level. The public GitHub profile is part of that identity—not a decorative social link.</p>
+        </div>
+        <a className="github-panel" href="https://github.com/JeremyNeeley" target="_blank" rel="noreferrer">
+          <span className="github-panel-label">GITHUB / VERIFIED PROFILE</span>
+          <strong>@JeremyNeeley</strong>
+          <span>github.com/JeremyNeeley ↗</span>
+        </a>
+      </section>
+
       <section className="section section-contrast">
         <div className="shell value-grid">
           {[

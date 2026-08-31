@@ -4,11 +4,19 @@ import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { InteriorHero } from "@/components/portfolio/InteriorHero";
 import { SectionCTA } from "@/components/portfolio/SectionCTA";
+import { WorkVisual, type WorkVisualVariant } from "@/components/portfolio/WorkVisual";
 import { workItems } from "@/data/portfolio";
 
 export const metadata: Metadata = {
   title: "Work",
   description: "Selected software, AI, cloud, security, and experimental engineering work from Panda Digital Systems."
+};
+
+const visualBySlug: Record<string, WorkVisualVariant> = {
+  "enterprise-ai-support-agent": "ai",
+  "product-engineering": "product",
+  "cloud-delivery-systems": "cloud",
+  "u-app": "experimental"
 };
 
 export default function WorkPage() {
@@ -41,9 +49,7 @@ export default function WorkPage() {
                   <Link className="text-link" href="/start-project">Discuss similar work <span>→</span></Link>
                 )}
               </div>
-              <div className={`portfolio-visual visual-${index + 1}`} aria-hidden="true">
-                <span /><span /><span /><span />
-              </div>
+              <WorkVisual variant={visualBySlug[item.slug] ?? "product"} />
             </article>
           ))}
         </div>
