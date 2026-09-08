@@ -28,6 +28,7 @@ export default function WorkPage() {
         title="Different problems. Different systems."
         copy="Our work spans intelligent systems, product engineering, cloud delivery, security, and experimental technology. We organize the portfolio around the problem being solved—not one framework or one app."
         action={{ label: "Start a Project", href: "/start-project" }}
+        founder={{ name: "Jeremy Neeley", nickname: "Panda", tagline: "ENGINEERING A BRIGHTER TOMORROW" }}
       />
       <section className="section shell">
         <div className="work-disclosure">

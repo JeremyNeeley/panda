@@ -77,3 +77,10 @@ Several temporary Vercel production deployments were created during testing, but
 ## Resume instruction
 
 When the domain has been purchased, resume from this checkpoint and finish the public launch. Do not rebuild the portfolio from scratch.
+
+## 2026-09-08 visual identity update
+
+- Added a production founder signature to the Work hero at the requested lower-right position.
+- Founder identity: **Jeremy Neeley** with nickname **“Panda”**.
+- Styling uses a restrained metallic champagne-gold gradient, subtle gold glow, framing rules, and the line **ENGINEERING A BRIGHTER TOMORROW**.
+- The signature collapses into normal responsive flow on tablet/mobile to avoid overlapping the hero copy or CTA.
