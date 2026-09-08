@@ -1,0 +1,20 @@
+75cceb7 feat: add Jeremy Neeley Panda gold founder signature
+eff0542 docs: save Panda Digital launch checkpoint
+61331a7 feat: publish complete Panda Engineering library
+68c8261 feat: add dedicated client-ready service pages
+7284910 feat: turn case studies into client decision tools
+7889c89 feat: make portfolio worldwide client-ready
+93d8670 feat: deepen portfolio proof and contextual intake
+f2e1db2 feat: complete PandaDigital v1 release candidate
+b1f40cb feat: polish sharing metadata and engagement flow
+a630121 feat: add credibility and visual proof layer
+dfc3825 feat: publish initial Panda Engineering field notes
+f97bece feat: expand portfolio into full multi-page experience
+bf6beda docs: add build status and deployment checklist
+dfb8eb6 security: harden lead intake and add production metadata routes
+b445f3a chore: keep TypeScript build artifacts out of source control
+0cbe742 security: complete Turnstile and lead notification pipeline
+693406c feat: add secure multi-step project intake flow
+3cf42d6 feat: build Panda Digital homepage and design system
+51f0de7 chore: configure Next.js TypeScript security baseline
+9ea209b chore: initialize Panda Digital repository
